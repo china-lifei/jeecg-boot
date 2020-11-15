@@ -101,6 +101,7 @@ public class LoginController {
 		
 		//2. 校验用户名或密码是否正确
 		String userpassword = PasswordUtil.encrypt(username, password, sysUser.getSalt());
+		System.out.println(userpassword);
 		String syspassword = sysUser.getPassword();
 		if (!syspassword.equals(userpassword)) {
 			result.error500("用户名或密码错误");
